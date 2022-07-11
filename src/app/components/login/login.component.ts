@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/userservice/user.service';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   register_flag:boolean=false;
   bgColor:string="#757373";
+  username:string='';
+  password:string='';
 
-  constructor() { }
+  constructor(private user:UserService) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +23,17 @@ export class LoginComponent implements OnInit {
   show_login(){
     this.register_flag=false;
     this.bgColor="#757373";
+  }
+  submit(){
+    let data={
+      'username': this.username,
+      'password': this.password
+    }
+    console.log('Api Call')
+    this.user.login(data).subscribe((res:any)=>{
+      console.log(res);
+      localStorage.setItem('token', res.token.access)
+    })
   }
 
 }

@@ -8,6 +8,7 @@ import { HttpService } from '../httpservice/http.service';
 export class UserService {
 
   constructor(private http:HttpService) { }
+
   login(data:any){
     let header={
       headers: new HttpHeaders({
@@ -15,5 +16,13 @@ export class UserService {
       })
     }
     return this.http.postService('account/login/', data, false, header);
+  }
+  register(data:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.http.postService('account/registration/', data, false, header)
   }
 }

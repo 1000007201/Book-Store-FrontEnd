@@ -1,21 +1,21 @@
 <div class="form-elements" fxLayout="column" fxLayoutAlign="center center">
     <div class="input-div" fxLayout="column" fxLayoutAlign="start start">
     <label>Name</label>
-    <input id="input-element" type="text">
+    <input id="input-element" type="text" [(ngModel)]="name">
     </div>
     <div class="input-div" fxLayout="column" fxLayoutAlign="start start">
     <label>Username</label>
-    <input id="input-element" type="text">
+    <input id="input-element" type="text" [(ngModel)]="username">
     </div>
     <div class="input-div" fxLayout="column" fxLayoutAlign="start start">
     <label>Email</label>
-    <input id="input-element" type="text">
+    <input id="input-element" type="text" [(ngModel)]="email">
     </div>
     <div class="input-div" fxLayout="column" fxLayoutAlign="start start">
     <label>Password</label>
-    <input id="input-element" type="text">
+    <input id="input-element" type="text" [(ngModel)]="password">
     </div>
     <div class="example-button-row">
-      <button id="login-button" mat-flat-button color="warn">Signup</button>
+      <button (click)="submit()" id="login-button" mat-flat-button color="warn">Signup</button>
     </div>
 </div>
