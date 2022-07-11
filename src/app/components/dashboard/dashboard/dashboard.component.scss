@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+.input-bar{
+    width: 40%;
+    background-color: #fff;
+    margin-left: 100px;
+    border-radius: 5px;
+    height: 40px;
+    border: 2px solid black;
+  }
+  .logo-search{
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+  }
+  .logo-search > img{
+    height: 30px;
+  }
+  #input-bar{
+    font-family: 'Open Sans', sans-serif;
+    width: 90%;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 120px;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .navbar{
+    background-color: rgb(136, 13, 13);
+    height: 55px;
+  }
+  .heading{
+    color: #fff;
+    border: 2px solid black;
+    font-family: 'Open Sans', sans-serif;
+  }
+  #heading-h2{
+    margin:0px;
+    margin-left: 5px;
+  }
+  .navbar-elements{
+    width: 70%;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .cart-icon{
+    border: 2px solid black;
+    height: 55px;
+  }
+  #cart-image{
+    margin-top: 15px;
+    height: 30px;
+  }
