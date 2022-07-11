@@ -1,0 +1,75 @@
+.main {
+    background: #beb7b7;
+    // opacity: 0.31;
+    height: 100vh;
+}
+
+.main-container {
+    position: relative;
+    width: 727px;
+    height: 440px;
+}
+
+.image-container {
+    position: absolute;
+    width: 624px;
+    height: 420px;
+    top: 10px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border-radius: 21px;
+}
+
+.form-container {
+    position: absolute;
+    height: 440px;
+    width: 389px;
+    left: 334px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 15px #00000029;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+}
+
+#store-image {
+    width: 216px;
+    border-radius: 125px;
+}
+.image{
+    margin-left: 58px;
+}
+#logo-heading{
+    margin-top: 30px;
+}
+.headings{
+    margin-top: 20px;
+}
+#input-element{
+    width: 250px;
+    height: 30px;
+    border-radius: 3px;
+    border-color: #757373;
+}
+.password-div{
+    margin-top: 25px;
+}
+.username-div{
+    margin-top: 10px;
+}
+#login-button{
+    width: 259px;
+    margin-top: 30px;
+    background-color: rgb(136, 13, 13);
+}
+.under-heading{
+    background-color:rgb(136, 13, 13);
+    height: 3px;
+    margin-top: 0px;
+    width: 30px;
+    border-radius: 40px;
+}
+.head-text{
+    margin-bottom: 0px;
+}
+.form-elements{
+    margin-top: 10px;
+}

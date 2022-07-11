@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="main" fxLayout="row" fxLayoutAlign="center center" [style.background-color]="bgColor">
+    <div class="main-container">
+        <div class="image-container" fxLayout="row" fxLayoutAlign="start center">
+            <div class="image" fxLayout="column" fxLayoutAlign="center center">
+            <img id="store-image" src="../../../assets/BookStore.png" alt="">
+            <p id="logo-heading">ONLINE BOOK SHOPPING</p>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="headings" fxLayout="row" fxLayoutAlign="space-around center">
+                <div fxLayout="column" fxLayoutAlign="space-around center">
+                    <h2 class="head-text" (click)="show_login()">LOGIN</h2>
+                    <div class="under-heading" *ngIf="!register_flag"></div>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="space-around center">
+                    <h2 class="head-text" (click)="show_register()">SIGNUP</h2>
+                    <div class="under-heading" *ngIf="register_flag"></div>
+                </div>
+            </div>
+            <div *ngIf="!register_flag" class="form-elements" fxLayout="column" fxLayoutAlign="center center">
+                <div class="username-div" fxLayout="column" fxLayoutAlign="start start">
+                <label>Username</label>
+                <input id="input-element" type="text">
+                </div>
+                <div class="password-div" fxLayout="column" fxLayoutAlign="start start">
+                <label>Password</label>
+                <input id="input-element" type="text">
+                </div>
+                <div class="example-button-row">
+                  <button id="login-button" mat-flat-button color="warn">Login</button>
+                </div>
+            </div>
+            <div *ngIf="register_flag">
+                <app-registration></app-registration>
+            </div>
+
+        </div>
+    </div>
+</div>
