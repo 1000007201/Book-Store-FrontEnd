@@ -10,14 +10,20 @@ import {MatButtonModule} from '@angular/material/button';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { GetAllBooksComponent } from './components/getallbook/get-all-books.component';
+import { DisplayBookComponent } from './components/display-book/display-book.component';
+import { GetBookComponent } from './components/get-book/get-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    DashboardComponent
+    DashboardComponent,
+    GetAllBooksComponent,
+    DisplayBookComponent,
+    GetBookComponent
   ],
   imports: [
     BrowserModule,

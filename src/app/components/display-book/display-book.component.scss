@@ -1,0 +1,28 @@
+.book-elements{
+    margin: 0px;
+}
+#book-image{
+    height: 120px;
+}
+.image-book{
+    height: 150px;
+    width: 188px;
+    background-color: #F5F5F5;
+}
+.book-detail{
+    height: 80px;
+    margin: 10px;
+}
+.book{
+    width: 190px;
+    border: 1px solid rgba(190, 185, 185, 0.279);
+    border-radius: 3px;
+    margin-bottom: 30px;
+    margin-right: 50px;
+}
+.main-book{
+    width: 100%;
+}
+.book:hover{
+    box-shadow: 0px 0px 1px 3px rgba(167, 163, 163, 0.141);
+}

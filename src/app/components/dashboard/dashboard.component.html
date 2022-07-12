@@ -1,0 +1,34 @@
+<div class="main">
+    <div class="navbar" fxLayout="row" fxLayoutAlign="center center">
+        <div class="navbar-elements" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="heading" fxLayout="row" fxLayoutAlign="center center">
+                <img src="../../../../assets/education.png">
+                <h2 id="heading-h2">Bookstore</h2>
+            </div>
+            <div class="input-bar" fxLayout="row" fxLayoutAlign="center center">
+                <div class="logo-search">
+                    <img src="../../../assets/search_.svg">
+                </div>
+                <input id="input-bar" placeholder="Search">
+            </div>
+            <div fxLayout="row">
+                <div class="account-icon" fxLayout="column" fxLayoutAlign="center center">
+                    <img id="cart-image" src="../../../../assets/account_circle.svg" alt="">
+                    <p>Account</p>
+                </div>
+                <div class="cart-icon" fxLayout="column" fxLayoutAlign="center center">
+                    <img id="cart-image" src="../../../../assets/shopping_cart_.svg" alt="">
+                    <p>Cart</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div  fxLayot="column" fxLayoutAlign="center center">
+        <div class="books">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="footer" fxLayoutAlign="center center">
+        <p>Copyright © 2022, Bookstore Private Limited. All Rights Reserved</p>
+    </div>
+</div>

@@ -20,6 +20,7 @@ export class RegistrationComponent implements OnInit {
     let data={
       'first_name': this.name,
       'username': this.username,
+      'email': this.email,
       'password': this.password,
       'confirm_password': this.password
     }
