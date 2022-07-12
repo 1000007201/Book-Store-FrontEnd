@@ -16,4 +16,12 @@ export class BookService {
     }
     return this.http.getService('book/get/', false, header)
   }
+  getBook(id:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.http.getService('book/get/'+id, false, header)
+  }
 }

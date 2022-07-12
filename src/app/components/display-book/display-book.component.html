@@ -1,7 +1,7 @@
 <div class="main" fxLayout="column" fxLayoutAlign="start start">
     <h1>Books</h1>
     <div class="main-book" fxLayout="row wrap" fxLayoutAlign="space-between start">
-        <div class="book" fxLayout="column" *ngFor="let data of childMessage">
+        <div class="book" fxLayout="column" *ngFor="let data of childMessage" (click)="book_by_id(data.id)">
             <div class="image-book" fxLayout="column" fxLayoutAlign="center center">
                 <img id="book-image" src="{{'http://127.0.0.1:8000' + data.image_field}}" alt="">
             </div>

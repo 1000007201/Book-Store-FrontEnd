@@ -2,7 +2,7 @@
     <div class="main-top" fxLayout="row" fxLayoutAlign="space-around start">
         <div class="img-container" div fxLayout="column" fxLayoutAlign="start center" >
             <div class="image" fxLayoutAlign="center center">
-                <img id="imga" src="../../../assets/book.jpg" alt="">
+                <img id="imga" src="{{'http://127.0.0.1:8000' + data.image_field}}" alt="">
             </div>
             <div class="buttons" fxLayoutAlign="space-between center">
                   <button id="book-button" mat-flat-button>ADD TO CART</button>
@@ -11,14 +11,14 @@
         </div>
         <div class="book-elements">
             <div class="book-main">
-                <h1>Title</h1>
-                <h3>By Author</h3>
-                <h5>Rating(Quantity)</h5>
-                <h1>Rs. 120</h1>
+                <h1>{{data.name}}</h1>
+                <h3>By {{data.author}}</h3>
+                <h5>{{data.rating}}({{data.quantity}})</h5>
+                <h1>Rs. {{data.price}}</h1>
             </div>
             <div class="book-details">
                 <p id="book-ele" >Book Details:</p>
-                <p id="book-ele" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit laudantium est asperiores commodi cupiditate, corporis eaque natus rerum velit cumque modi consequuntur repudiandae soluta sit expedita, nemo recusandae magnam. Harum.</p>
+                <p id="book-ele" >{{data.description}}</p>
             </div>
         </div>
     </div>
