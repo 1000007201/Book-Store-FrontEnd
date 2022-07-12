@@ -6,10 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./display-book.component.scss']
 })
 export class DisplayBookComponent implements OnInit {
-  @Input() childMessage: string | undefined;
+
+  @Input() childMessage: any;
+  
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.childMessage);
   }
 
 }
