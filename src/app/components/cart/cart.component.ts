@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cartservice/cart.service';
+import { OrderService } from 'src/app/services/orderservice/order.service';
 
 @Component({
   selector: 'app-cart',
@@ -15,7 +16,7 @@ export class CartComponent implements OnInit {
   continue:boolean=false;
   cart_data:any;
 
-  constructor(private cart:CartService) { }
+  constructor(private cart:CartService, private order:OrderService) { }
 
   ngOnInit(): void {
     this.get_all_cart();
@@ -67,6 +68,14 @@ export class CartComponent implements OnInit {
       console.log(res)
       this.cart_data=res.Data
       this.continue=true;
+    })
+  }
+  checkout_button(cart_id:any){
+    let data={
+      'address': this.address
+    }
+    this.order.checkout(cart_id, data).subscribe((res)=>{
+      console.log(res)
     })
   }
 
