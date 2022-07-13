@@ -1,0 +1,97 @@
+<div class="main">
+    <div class="main-top">
+        <div class="home-link" fxLayout="row">
+            <p id="link-p" routerLink="/dashboard/book">Home</p>
+            <p>/My Cart</p>
+        </div>
+        <div class="cart-main">
+            <div class="cart-items">
+                <h3 id="mycart">My Cart</h3>
+                <div *ngFor="let data of Data">
+                    <div class="cart-elements" fxLayout="row">
+                        <div class="image">
+                            <img class="image-book" src="{{'http://127.0.0.1:8000' + data.book.image_field}}" alt="">
+                        </div>
+                        <div class="cart-details">
+                            <h3 class="headings">{{data.book.name}}</h3>
+                            <h6 class="headings" id="author">By {{data.book.author}}</h6>
+                            <h3 class="headings">Rs. {{data.book.price}}</h3>
+                            <div class="quantity_update" fxLayout="row" fxLayoutAlign="start center">
+                                <button class="up-down-button" fxLayoutAlign="center center"
+                                    (click)="dec_quantity(data.quantity, data.id)">-</button>
+                                <input id="quantity-input" type="number" [(ngModel)]="data.quantity">
+                                <button class="up-down-button" fxLayoutAlign="center center"
+                                    (click)="inc_quantity(data.quantity, data.id)">+</button>
+                                <span class="remove" (click)="deleteCart(data.id)">Remove</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-container" fxLayoutAlign="end end" *ngIf="!place_order">
+                        <button id="matbutton" mat-flat-button (click)="placeOrder(data.id)">PLACE ORDER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="address-details">
+            <div class="address" *ngIf="!place_order">
+                Address Details
+            </div>
+            <div class="address-complete" *ngIf="place_order">
+                <span>
+                    <h2>Customer Details</h2>
+                </span>
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <div fxLayout="column" fxLayoutAlign="center start">
+                        <p>Full Name</p>
+                        <input class="customer-input" type="text">
+                    </div>
+                    <div fxLayout="column" fxLayoutAlign="center start">
+                        <p>Mobile Number</p>
+                        <input class="customer-input" type="number">
+                    </div>
+                </div>
+                <div class="address-div" fxLayout="column" fxLayoutAlign="center start">
+                    <p>Address</p>
+                    <input class="address-input" type="text" [(ngModel)]="address">
+                </div>
+                <div class="address-div" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div fxLayout="column" fxLayoutAlign="center start">
+                        <p>City</p>
+                        <input class="customer-input" type="text">
+                    </div>
+                    <div fxLayout="column" fxLayoutAlign="center start">
+                        <p>State</p>
+                        <input class="customer-input" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="button-container" fxLayoutAlign="end end" *ngIf="place_order && !continue">
+                <button id="matbutton" mat-flat-button (click)="continue_button()">CONTINUE</button>
+            </div>
+        </div>
+        <div class="address-details">
+            <div class="address" *ngIf="!continue">
+                Order Summary
+            </div>
+            <div class="order-details" *ngIf="continue">
+                <span>
+                    <h1>Order Summary</h1>
+                </span>
+                <div fxLayout="row">
+                    <div>
+                        <img class="image-book" src="{{'http://127.0.0.1:8000' + cart_data.book.image_field}}" alt="">
+                    </div>
+                    <div class="order-detail">
+                        <h3 class="headings">{{cart_data.book.name}}</h3>
+                        <h6 class="headings" id="author">By {{cart_data.book.author}}</h6>
+                        <h3 class="headings">Rs. {{cart_data.book.price}}</h3>
+                    </div>
+
+                </div>
+                <div class="button-container" fxLayoutAlign="end end" *ngIf="continue">
+                    <button id="matbutton" mat-flat-button>CHECKOUT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -16,4 +16,10 @@ export class HttpService {
   getService(url:string, token:boolean=false, httpOptions:any){
     return this.http.get(this.Baseurl+url, token && httpOptions)
   }
+  patchService(url:string, data:any, token:boolean=false, httpOptions:any){
+    return this.http.patch(this.Baseurl+url, data, token && httpOptions);
+  }
+  deleteService(url:string, token:boolean=false, httpOptions:any){
+    return this.http.delete(this.Baseurl+url, token && httpOptions)
+  }
 }

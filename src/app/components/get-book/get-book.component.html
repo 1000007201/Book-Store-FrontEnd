@@ -1,24 +1,41 @@
 <div class="main">
-    <div class="main-top" fxLayout="row" fxLayoutAlign="space-around start">
-        <div class="img-container" div fxLayout="column" fxLayoutAlign="start center" >
-            <div class="image" fxLayoutAlign="center center">
-                <img id="imga" src="{{'http://127.0.0.1:8000' + data.image_field}}" alt="">
-            </div>
-            <div class="buttons" fxLayoutAlign="space-between center">
-                  <button id="book-button" mat-flat-button>ADD TO CART</button>
-                  <button id="book-button" mat-flat-button color="warn">WISHLIST</button>
-            </div>
+    <div class="every">
+        <div class="home-link" fxLayout="row">
+            <p id="link-p" routerLink="/dashboard/book">Home</p><p>/Book(01)</p>
         </div>
-        <div class="book-elements">
-            <div class="book-main">
-                <h1>{{data.name}}</h1>
-                <h3>By {{data.author}}</h3>
-                <h5>{{data.rating}}({{data.quantity}})</h5>
-                <h1>Rs. {{data.price}}</h1>
+        <div class="main-top" fxLayout="row" fxLayoutAlign="start start">
+            <div class="main-image" fxLayout="row" fxLayoutAlign="start start">
+                <div class="image-small" fxLayoutAlign="center center">
+                    <img class="imga" src="{{'http://127.0.0.1:8000' + data.image_field}}" alt="">
+                </div>
+                <div class="img-container" div fxLayout="column" fxLayoutAlign="start center">
+                    <div class="image" fxLayoutAlign="center center">
+                        <img class="imga" src="{{'http://127.0.0.1:8000' + data.image_field}}" alt="">
+                    </div>
+                    <div class="buttons" fxLayoutAlign="space-between center">
+                        <button *ngIf="!added" id="book-button" mat-flat-button (click)="addCart(data.id)">ADD TO CART</button>
+                        <button *ngIf="added" id="book-button" mat-flat-button>ADDED TO CART</button>
+                        <button id="book-button" mat-flat-button color="warn">WISHLIST</button>
+                    </div>
+                </div>
             </div>
-            <div class="book-details">
-                <p id="book-ele" >Book Details:</p>
-                <p id="book-ele" >{{data.description}}</p>
+            <div class="book-elements">
+                <div class="book-main">
+                    <h1>{{data.name}}</h1>
+                    <h3>By {{data.author}}</h3>
+                    <div class="rating" fxLayout="row" fxLayoutAlign="space-between center">
+                        <div class="rate" fxLayout="row" fxLayoutAlign="space-around center">
+                            {{data.rating}}
+                            <img id="star" src="../../../assets/star_.svg" alt="">
+                        </div>
+                        <h4 style="margin:0px;">({{data.quantity}})</h4>
+                    </div>
+                    <h1>Rs. {{data.price}}</h1>
+                </div>
+                <div class="book-details">
+                    <p id="book-ele">Book Details:</p>
+                    <p id="book-ele">{{data.description}}</p>
+                </div>
             </div>
         </div>
     </div>

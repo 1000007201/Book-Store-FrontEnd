@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouteConfigLoadEnd } from '@angular/router';
 import { BookService } from 'src/app/services/bookservice/book.service';
+import { CartService } from 'src/app/services/cartservice/cart.service';
 
 @Component({
   selector: 'app-get-book',
@@ -10,8 +11,9 @@ import { BookService } from 'src/app/services/bookservice/book.service';
 export class GetBookComponent implements OnInit {
   data:any;
   id:any;
+  added:boolean=false;
 
-  constructor(private book:BookService, private route:ActivatedRoute) { }
+  constructor(private book:BookService, private route:ActivatedRoute, private cart:CartService) { }
 
   ngOnInit(): void {
     this.get_book();
@@ -21,6 +23,16 @@ export class GetBookComponent implements OnInit {
     this.book.getBook(this.id).subscribe((res:any)=>{
       this.data=res.Data;
       console.log(res.Data);
+    })
+  }
+  addCart(book_id:any){
+    let data={
+      'book_id': book_id,
+      'quantity': 1
+    }
+    this.cart.add_cart(data).subscribe((res)=>{
+      console.log(res);
+      this.added=true;
     })
   }
 

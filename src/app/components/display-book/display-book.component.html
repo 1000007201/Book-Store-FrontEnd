@@ -8,7 +8,13 @@
             <div class="book-detail">
                 <h4 class="book-elements">{{data.name}}</h4>
                 <h6 class="book-elements">By {{data.author}}</h6>
-                <h6 class="book-elements">{{data.rating}}({{data.quantity}})</h6>
+                <div class="rating" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div class="rate" fxLayout="row" fxLayoutAlign="space-around center">
+                    {{data.rating}}
+                    <img id="star" src="../../../assets/star_.svg" alt="">
+                    </div>
+                    <h6 style="margin:0px;">({{data.quantity}})</h6>
+                </div>
                 <h5 class="book-elements">Rs. {{data.price}}</h5>
             </div>
         </div>

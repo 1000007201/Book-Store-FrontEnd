@@ -14,6 +14,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetAllBooksComponent } from './components/getallbook/get-all-books.component';
 import { DisplayBookComponent } from './components/display-book/display-book.component';
 import { GetBookComponent } from './components/get-book/get-book.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { GetBookComponent } from './components/get-book/get-book.component';
     DashboardComponent,
     GetAllBooksComponent,
     DisplayBookComponent,
-    GetBookComponent
+    GetBookComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
