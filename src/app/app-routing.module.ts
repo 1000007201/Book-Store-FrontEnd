@@ -5,6 +5,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetBookComponent } from './components/get-book/get-book.component';
 import { GetAllBooksComponent } from './components/getallbook/get-all-books.component';
 import { LoginComponent } from './components/login/login.component';
+import { UsereditComponent } from './components/useredit/useredit.component';
+import { UserService } from './services/userservice/user.service';
 
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full'},
@@ -13,6 +15,7 @@ const routes: Routes = [
     {path:'book', component: GetAllBooksComponent},
     {path:'book/:id', component: GetBookComponent},
     {path:'cart', component: CartComponent},
+    {path:'profile', component: UsereditComponent}
   ]}
 ];
 

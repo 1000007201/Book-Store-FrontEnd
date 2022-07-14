@@ -35,4 +35,13 @@ export class UserService {
     }
     return this.http.getService('account/get/user/', true, header)
   }
+  updateUser(data:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Token': this.token
+      })
+    }
+    return this.http.patchService('account/update/user/', data, true, header)
+  }
 }

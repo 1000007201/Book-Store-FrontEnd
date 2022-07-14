@@ -1,0 +1,40 @@
+<div class="main">
+    <div class="main-top">
+        <div class="home-link" fxLayout="row">
+            <p id="link-p" routerLink="/dashboard/book">Home</p>
+            <p>/Profile</p>
+        </div>
+        <div class="profile">
+            <div class="heading-button" fxLayout="row" fxLayoutAlign="space-between end">
+                <div class="heading" fxLayout="row" fxLayoutAlign="start end">
+                    <h1 id="heading-h1">Customer Details</h1>
+                    <h5 class="heading-h5" (click)="edit()" *ngIf="!edit_flag">Edit</h5>
+                    <h5 class="heading-h5" (click)="cancel()" *ngIf="edit_flag">Cancel</h5>
+                </div>
+                <div class="button-container" fxLayoutAlign="end end" *ngIf="edit_flag">
+                    <button id="matbutton" mat-flat-button (click)="submit()">Save</button>
+                </div>
+            </div>
+            <div class="form" *ngIf="!edit_flag">
+                <p class="profile-p">First Name</p>
+                <input type="text" class="profile-input-dis" [(ngModel)]="user_details.first_name" readonly>
+                <p class="profile-p">Last Name</p>
+                <input type="text" class="profile-input-dis" [(ngModel)]="user_details.last_name" readonly>
+                <p class="profile-p">Username</p>
+                <input type="text" class="profile-input-dis" [(ngModel)]="user_details.username" readonly>
+                <p class="profile-p">Email</p>
+                <input type="text" class="profile-input-dis" [(ngModel)]="user_details.email" readonly>
+            </div>
+            <div class="form" *ngIf="edit_flag">
+                <p class="profile-p">First Name</p>
+                <input type="text" class="profile-input" [(ngModel)]="user_details.first_name">
+                <p class="profile-p">Last Name</p>
+                <input type="text" class="profile-input" [(ngModel)]="user_details.last_name">
+                <p class="profile-p">Username</p>
+                <input type="text" class="profile-input" [(ngModel)]="user_details.username">
+                <p class="profile-p">Email</p>
+                <input type="text" class="profile-input" [(ngModel)]="user_details.email">
+            </div>
+        </div>
+    </div>
+</div>

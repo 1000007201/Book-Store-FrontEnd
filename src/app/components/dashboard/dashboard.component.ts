@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/dataservice/data.service';
 import { UserService } from 'src/app/services/userservice/user.service';
 
 @Component({
@@ -8,17 +9,18 @@ import { UserService } from 'src/app/services/userservice/user.service';
 })
 export class DashboardComponent implements OnInit {
   user_details:any;
+  message:any;
 
-  constructor(private user:UserService) { }
+  constructor(private user:UserService, private data:DataService) { }
 
   ngOnInit(): void {
-    this.get_user();
+    this.get_user()
   }
   get_user(){
     this.user.getUser().subscribe((res:any)=>{
       console.log(res)
       this.user_details=res.Data;
+      this.data.changeMessage(this.user_details)
     })
   }
-
 }
