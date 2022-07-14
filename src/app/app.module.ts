@@ -16,6 +16,7 @@ import { DisplayBookComponent } from './components/display-book/display-book.com
 import { GetBookComponent } from './components/get-book/get-book.component';
 import { CartComponent } from './components/cart/cart.component';
 import { UsereditComponent } from './components/useredit/useredit.component';
+import { FilterPipe } from './filter/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UsereditComponent } from './components/useredit/useredit.component';
     DisplayBookComponent,
     GetBookComponent,
     CartComponent,
-    UsereditComponent
+    UsereditComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@
                 <div class="logo-search">
                     <img src="../../../assets/search_.svg">
                 </div>
-                <input id="input-bar" placeholder="Search">
+                <input id="input-bar" placeholder="Search" (keyup)="onKeyUp($event)">
             </div>
             <div fxLayout="row">
                 <div routerLink="/dashboard/profile" class="account-icon" fxLayout="column" fxLayoutAlign="center center">

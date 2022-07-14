@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/userservice/user.service';
 export class DashboardComponent implements OnInit {
   user_details:any;
   message:any;
+  search_text:string=''
 
   constructor(private user:UserService, private data:DataService) { }
 
@@ -22,5 +23,9 @@ export class DashboardComponent implements OnInit {
       this.user_details=res.Data;
       this.data.changeMessage(this.user_details)
     })
+  }
+  onKeyUp(event:any){
+    this.search_text = event.target.value
+    this.data.changeSearch(this.search_text)
   }
 }
