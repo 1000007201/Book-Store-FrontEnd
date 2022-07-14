@@ -14,7 +14,13 @@
                     </div>
                     <div class="buttons" fxLayoutAlign="space-between center">
                         <button *ngIf="!added" id="book-button" mat-flat-button (click)="addCart(data.id)">ADD TO CART</button>
-                        <button *ngIf="added" id="book-button" mat-flat-button>ADDED TO CART</button>
+                        <div *ngIf="added" class="quantity_update" fxLayout="row" fxLayoutAlign="space-between center">
+                            <button class="up-down-button" fxLayoutAlign="center center"
+                                (click)="dec_quantity(cart_data.quantity, cart_data.id)">-</button>
+                            <input id="quantity-input" type="number" [(ngModel)]="cart_data.quantity">
+                            <button class="up-down-button" fxLayoutAlign="center center"
+                                (click)="inc_quantity(cart_data.quantity, cart_data.id)">+</button>
+                        </div>
                         <button id="book-button" mat-flat-button color="warn">WISHLIST</button>
                     </div>
                 </div>

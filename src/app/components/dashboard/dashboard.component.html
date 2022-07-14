@@ -14,9 +14,9 @@
             <div fxLayout="row">
                 <div class="account-icon" fxLayout="column" fxLayoutAlign="center center">
                     <img id="cart-image" src="../../../../assets/account_circle.svg" alt="">
-                    <p>Account</p>
+                    <p>{{user_details.first_name}}</p>
                 </div>
-                <div class="cart-icon" fxLayout="column" fxLayoutAlign="center center">
+                <div routerLink="/dashboard/cart" class="cart-icon" fxLayout="column" fxLayoutAlign="center center">
                     <img id="cart-image" src="../../../../assets/shopping_cart_.svg" alt="">
                     <p>Cart</p>
                 </div>

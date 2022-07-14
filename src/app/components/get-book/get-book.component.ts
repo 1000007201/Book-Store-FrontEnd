@@ -12,6 +12,7 @@ export class GetBookComponent implements OnInit {
   data:any;
   id:any;
   added:boolean=false;
+  cart_data:any;
 
   constructor(private book:BookService, private route:ActivatedRoute, private cart:CartService) { }
 
@@ -30,10 +31,43 @@ export class GetBookComponent implements OnInit {
       'book_id': book_id,
       'quantity': 1
     }
-    this.cart.add_cart(data).subscribe((res)=>{
+    this.cart.add_cart(data).subscribe((res:any)=>{
       console.log(res);
+      this.get_cart(res.cart_id)
       this.added=true;
     })
+  }
+  get_cart(cart_id:any){
+    this.cart.getCart(cart_id).subscribe((res:any)=>{
+      console.log(res);
+      this.cart_data=res.Data;
+    })
+  }
+  inc_quantity(quantity:any, cart_id:any){
+    quantity = quantity + 1
+    let data ={
+      'quantity': quantity
+    }
+    this.cart.updateCart(data, cart_id).subscribe((res)=>{
+      console.log(res)
+      this.get_cart(cart_id);
+    })
+    
+  }
+  dec_quantity(quantity:any, cart_id:any){
+    if (quantity <= 1){
+      return
+    }
+    else{
+      quantity = quantity - 1
+      let data={
+        'quantity': quantity
+      }
+      this.cart.updateCart(data, cart_id).subscribe((res)=>{
+        console.log(res)
+        this.get_cart(cart_id);
+      })
+    }
   }
 
 }

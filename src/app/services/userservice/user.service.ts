@@ -6,6 +6,7 @@ import { HttpService } from '../httpservice/http.service';
   providedIn: 'root'
 })
 export class UserService {
+  token:any=localStorage.getItem('token');
 
   constructor(private http:HttpService) { }
 
@@ -24,5 +25,14 @@ export class UserService {
       })
     }
     return this.http.postService('account/registration/', data, false, header)
+  }
+  getUser(){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Token': this.token
+      })
+    }
+    return this.http.getService('account/get/user/', true, header)
   }
 }
