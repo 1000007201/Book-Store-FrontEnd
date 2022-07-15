@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cartservice/cart.service';
 import { OrderService } from 'src/app/services/orderservice/order.service';
 
@@ -16,7 +17,7 @@ export class CartComponent implements OnInit {
   continue:boolean=false;
   cart_data:any;
 
-  constructor(private cart:CartService, private order:OrderService) { }
+  constructor(private cart:CartService, private order:OrderService, private route:Router) { }
 
   ngOnInit(): void {
     this.get_all_cart();
@@ -76,6 +77,7 @@ export class CartComponent implements OnInit {
     }
     this.order.checkout(cart_id, data).subscribe((res)=>{
       console.log(res)
+      this.route.navigateByUrl('/dashboard/success')
     })
   }
 

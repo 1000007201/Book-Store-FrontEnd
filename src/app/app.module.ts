@@ -17,6 +17,7 @@ import { GetBookComponent } from './components/get-book/get-book.component';
 import { CartComponent } from './components/cart/cart.component';
 import { UsereditComponent } from './components/useredit/useredit.component';
 import { FilterPipe } from './filter/filter.pipe';
+import { OrderPlacedComponent } from './components/order-placed/order-placed.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FilterPipe } from './filter/filter.pipe';
     GetBookComponent,
     CartComponent,
     UsereditComponent,
-    FilterPipe
+    FilterPipe,
+    OrderPlacedComponent
   ],
   imports: [
     BrowserModule,
