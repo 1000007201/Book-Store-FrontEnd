@@ -8,7 +8,11 @@ import { DataService } from 'src/app/services/dataservice/data.service';
   styleUrls: ['./display-book.component.scss']
 })
 export class DisplayBookComponent implements OnInit {
-  filterstring:string=''
+  filterstring:string='';
+  price:string='price';
+  rating:string='rating';
+  name:string='name';
+  sorting:string='';
   @Input() childMessage: any;
   
   constructor(private route:Router, private data:DataService) { }
@@ -21,5 +25,8 @@ export class DisplayBookComponent implements OnInit {
   }
   book_by_id(id:any){
     this.route.navigateByUrl('dashboard/book/'+id);
+  }
+  sort_by(entity:string){
+    this.sorting=entity;
   }
 }

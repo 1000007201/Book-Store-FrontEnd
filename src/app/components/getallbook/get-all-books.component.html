@@ -1,1 +1,9 @@
 <app-display-book [childMessage]="Message"></app-display-book>
+<div class="page-view">
+    <div class="page-buttons" fxLayoutAlign="center center">
+        <button class="buuton" *ngIf="prev_page" (click)="get_next(prev)"><</button>
+        <button class="buuton" *ngIf="!prev_page" disabled><</button>
+        <button class="buuton" *ngIf="next_page" (click)="get_next(next)">></button>
+        <button class="buuton" *ngIf="!next_page" disabled >></button>
+    </div>
+</div>
