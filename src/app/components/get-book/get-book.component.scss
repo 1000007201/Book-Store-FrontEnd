@@ -50,7 +50,7 @@
     height: 27px;
     width: 82px;
 }
-.rate{
+.rate__{
     background-color: green;
     width: 40px;
     color: #fff;
@@ -85,4 +85,75 @@ input::-webkit-inner-spin-button {
 }
 .quantity_update{
     width: 100px;
+}
+
+.rate {
+    height: 46px;
+    padding: 0 15px;
+    font-size: 30px;
+    padding-top: 10px;
+    color:#fff;
+}
+
+#matbutton{
+    background-color: #3371b5;
+    border-radius: 2px;
+    width: 80px;
+    height: 30px;
+    color: #fff;
+    font-weight: normal;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.review-input{
+    width: 540px;
+    height: 35px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+}
+.input-submit{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.feedback{
+    background-color:rgba(156, 152, 152, 0.136);
+    border-radius: 3px;
+}
+#customer-review{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.rate1:hover{
+    color: #ffc700;
+    cursor: pointer;
+}
+.rate2:hover{
+    color: #ffc700;
+    cursor: pointer;
+}
+.rate3:hover{
+    color: #ffc700;
+    cursor: pointer;
+}
+.rate4:hover{
+    color: #ffc700;
+    cursor: pointer;
+}
+.rate5:hover{
+    color: #ffc700;
+    cursor: pointer;
+}
+#check{
+    color: #ffc700;
+    font-size: 30px;
+}
+#not-check{
+    color: rgba(128, 128, 128, 0.167);
+    font-size: 30px;
+}
+#cus-name{
+    margin: 0px;
+    margin-top: 10px;
 }

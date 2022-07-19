@@ -14,6 +14,12 @@ export class GetBookComponent implements OnInit {
   id:any;
   added:boolean=false;
   cart_data:any;
+  description:string='';
+  checkArray:Array<any>=[];
+  uncheckArray:Array<any>=[];
+  submitted:boolean=false;
+  rating:any;
+  unrating:any;
 
   constructor(private book:BookService, private route:ActivatedRoute, private cart:CartService) { }
 
@@ -69,6 +75,20 @@ export class GetBookComponent implements OnInit {
         this.get_cart(cart_id);
       })
     }
+  }
+  add_rate(rate:any){
+    this.rating=rate;
+    this.unrating= 5-rate
+    console.log(this.rating, this.unrating)
+  }
+  add_review(){
+    for (var i=1; i<=this.rating; i++){
+      this.checkArray.push(i)
+    }
+    for (var j=1; j<= this.unrating; j++){
+      this.uncheckArray.push(j)
+    }
+    this.submitted=true;
   }
 
 }
